@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import todo.entities.Todo;
-import todo.exceptions.TodoNotFoundException;
 import todo.repositories.ITodoRepository;
 
 import java.util.List;
@@ -28,12 +27,8 @@ public class TodoService implements ITodoService{
         return repository.findAll();
     }
 
-    public Optional<Todo> getTodo(Long id) throws TodoNotFoundException {
-        var todo = repository.findById(id);
-        if(!todo.isPresent()){
-            throw new TodoNotFoundException(String.format("Todo with id %d cannot be found",id));
-        }
-        return todo;
+    public Optional<Todo> getTodo(Long id){
+        return repository.findById(id);
     }
 
     public List<Todo> queryByTodo(String todoQuery){
