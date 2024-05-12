@@ -1,6 +1,7 @@
 package todo.services;
 
 import todo.entities.Todo;
+import todo.exceptions.TodoNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +11,7 @@ public interface ITodoService {
 
     List<Todo> getTodos();
 
-    Optional<Todo> getTodo(Long id);
+    Optional<Todo> getTodo(Long id) throws TodoNotFoundException;
 
     List<Todo> queryByTodo(String todoQuery);
 }
