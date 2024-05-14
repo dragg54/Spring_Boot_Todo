@@ -36,7 +36,7 @@ class TodoServiceTest {
     @Test
     public void When_Get_Todo_Is_Invoked_Then_Should_Return_A_Todo() throws TodoNotFoundException {
         Todo expectedTodo =  Todo.builder()
-                .todoId(3L)
+                .todoId(1L)
                 .todo("I want to wash my cloths")
                 .build();
         expectedTodo.setTodoId(1L);
