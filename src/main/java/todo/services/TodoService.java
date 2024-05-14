@@ -17,7 +17,6 @@ import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class TodoService implements ITodoService{
-    @Autowired
     private  ITodoRepository repository;
 
     public void createTodo(Todo todo){
