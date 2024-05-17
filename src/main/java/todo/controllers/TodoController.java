@@ -20,7 +20,7 @@ public class TodoController {
     private ITodoService todoService;
     private final Logger LOGGER = LoggerFactory.getLogger(TodoController.class);
 
-    @PostMapping("todo")
+    @PostMapping("/todo")
     public void createTodo(@Valid @RequestBody Todo todo){
         LOGGER.info("todo saved");
         todoService.createTodo(todo);

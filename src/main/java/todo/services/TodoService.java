@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import todo.entities.Todo;
 import todo.exceptions.TodoNotFoundException;
@@ -13,11 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Service
 public class TodoService implements ITodoService{
-    private  ITodoRepository repository;
+    private final  ITodoRepository repository;
 
     public void createTodo(Todo todo){
         repository.save(todo);

@@ -1,8 +1,10 @@
 package todo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Repository;
+import todo.entities.UserDtl;
 
-public interface UserRepo extends JpaRepository<User, Long> {
-    public User findByUserName(String userName);
+@Repository
+public interface UserRepo extends JpaRepository<UserDtl, Long> {
+    public UserDtl findByUserName(String userName);
 }
